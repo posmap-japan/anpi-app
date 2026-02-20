@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - Anpi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: #f9f9f9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      background: #fff;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+    .app-name {
+      color: #4A90D9;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .last-updated {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+      border-bottom: 2px solid #4A90D9;
+      padding-bottom: 4px;
+    }
+    h3 {
+      font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    p, li {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    ul {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .contact {
+      background: #f0f4f8;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-top: 24px;
+    }
+    .contact a {
+      color: #4A90D9;
+    }
+    .nav {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eee;
+    }
+    .nav a {
+      color: #4A90D9;
+      text-decoration: none;
+      margin-right: 16px;
+      font-size: 14px;
+    }
+    .nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="index.html">サポート</a>
+      <a href="privacy-policy.html">プライバシーポリシー</a>
+      <a href="terms-of-service.html">利用規約</a>
+    </div>
+
+    <p class="app-name">Anpi（あんぴ）</p>
+    <h1>プライバシーポリシー</h1>
+    <p class="last-updated">最終更新日: 2026年2月19日</p>
+
+    <p>Anpi（以下「本アプリ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。本プライバシーポリシーは、本アプリが収集する情報、その利用方法、および保護方法について説明します。</p>
+
+    <h2>1. 収集する情報</h2>
+
+    <h3>1.1 アカウント情報</h3>
+    <ul>
+      <li>Apple ID またはGoogleアカウントを通じた認証情報（メールアドレス、表示名）</li>
+      <li>ユーザーが任意で設定するプロフィール情報</li>
+    </ul>
+
+    <h3>1.2 見守り機能に関する情報</h3>
+    <ul>
+      <li>見守り対象者との関係情報（ペアリング情報）</li>
+      <li>安否確認の送受信記録</li>
+      <li>見守り時間の設定情報</li>
+    </ul>
+
+    <h3>1.3 デバイス情報</h3>
+    <ul>
+      <li>プッシュ通知用のデバイストークン（FCMトークン）</li>
+      <li>デバイスの種類、OSバージョン</li>
+    </ul>
+
+    <h3>1.4 購入情報</h3>
+    <ul>
+      <li>サブスクリプションの状態（プラン種別、有効期限）</li>
+      <li>決済処理はApple（App Store）およびRevenueCatを通じて行われ、クレジットカード情報等の決済情報は本アプリでは直接取得・保存しません。</li>
+    </ul>
+
+    <h2>2. 情報の利用目的</h2>
+    <p>収集した情報は、以下の目的で利用します。</p>
+    <ul>
+      <li>見守りサービスの提供・運営</li>
+      <li>安否確認の通知送信</li>
+      <li>ユーザー認証およびアカウント管理</li>
+      <li>サブスクリプションの管理</li>
+      <li>アプリの改善およびサポート対応</li>
+      <li>利用規約違反への対応</li>
+    </ul>
+
+    <h2>3. 情報の共有</h2>
+    <p>本アプリは、以下の場合を除き、ユーザーの個人情報を第三者に提供しません。</p>
+    <ul>
+      <li><strong>見守り相手:</strong> ペアリングされたユーザー間で、見守りに必要な情報（表示名、安否状態、見守り時間）が共有されます。</li>
+      <li><strong>サービスプロバイダ:</strong> Firebase（Google）、RevenueCat等、サービス運営に必要な外部サービスに情報が提供されます。</li>
+      <li><strong>法的要請:</strong> 法令に基づく場合、または法的手続きに応じる場合。</li>
+    </ul>
+
+    <h2>4. データの保存と管理</h2>
+    <ul>
+      <li>データはGoogle Firebase（Cloud Firestore）に安全に保存されます。</li>
+      <li>通信はSSL/TLSにより暗号化されています。</li>
+      <li>アカウントを削除した場合、関連するデータは速やかに削除されます。</li>
+    </ul>
+
+    <h2>5. ユーザーの権利</h2>
+    <p>ユーザーは以下の権利を有します。</p>
+    <ul>
+      <li><strong>データへのアクセス:</strong> ご自身のデータの開示を求めることができます。</li>
+      <li><strong>データの修正:</strong> 不正確なデータの修正を求めることができます。</li>
+      <li><strong>データの削除:</strong> アプリ内の設定からアカウントを削除することで、すべてのデータを削除できます。</li>
+      <li><strong>通知の停止:</strong> デバイスの設定からプッシュ通知を無効にできます。</li>
+    </ul>
+
+    <h2>6. 子どものプライバシー</h2>
+    <p>本アプリは13歳未満のお子様を対象としたサービスではありません。13歳未満のお子様から意図的に個人情報を収集することはありません。</p>
+
+    <h2>7. プライバシーポリシーの変更</h2>
+    <p>本ポリシーは必要に応じて更新されることがあります。重要な変更がある場合は、アプリ内通知またはこのページにて通知します。</p>
+
+    <h2>8. お問い合わせ</h2>
+    <div class="contact">
+      <p>プライバシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
+      <p><strong>メール:</strong> <a href="mailto:anpi.app.support@gmail.com">anpi.app.support@gmail.com</a></p>
+    </div>
+  </div>
+</body>
+</html>
