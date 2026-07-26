@@ -3,207 +3,954 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anpi - サポート</title>
+  <title>Anpi（あんぴ）｜位置情報を使わない、やさしい見守り</title>
+  <meta name="description" content="歩数と睡眠だけで、離れて暮らす家族をやさしく見守るアプリ。GPSは使いません。一定時間活動がないときだけ通知が届きます。">
+  <meta property="og:title" content="Anpi｜位置情報を使わない、やさしい見守り">
+  <meta property="og:description" content="歩数と睡眠だけで、大切な人の安否を見守る。GPSなし・プライバシー重視の見守りアプリ。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://posmap-japan.github.io/anpi-app/">
+  <meta property="og:image" content="https://posmap-japan.github.io/anpi-app/images/family-icon.png">
+  <link rel="icon" href="images/anpi_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #4A90D9;
+      --blue-deep: #2F6FB5;
+      --blue-soft: #E8F2FB;
+      --blue-mist: #F3F8FC;
+      --navy: #1B2A41;
+      --ink: #222831;
+      --muted: #6B7280;
+      --line: #E5E7EB;
+      --ok: #22A06B;
+      --warn: #F4B400;
+      --danger: #E85D4C;
+      --radius: 20px;
+      --shadow: 0 16px 40px rgba(27, 42, 65, 0.08);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-      line-height: 1.8;
-      color: #333;
-      background: #f9f9f9;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 24px;
+      font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Hiragino Sans", sans-serif;
+      color: var(--ink);
       background: #fff;
-      min-height: 100vh;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
-    .header {
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap {
+      width: min(100% - 40px, var(--max));
+      margin-inline: auto;
+    }
+    .section {
+      padding: 88px 0;
+    }
+    .section-title {
       text-align: center;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      letter-spacing: 0.04em;
       margin-bottom: 40px;
+      color: var(--navy);
     }
-    .header h1 {
-      font-size: 36px;
-      color: #1a1a1a;
-      margin-bottom: 8px;
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.86);
+      border-bottom: 1px solid rgba(229,231,235,0.7);
     }
-    .header .tagline {
+    .site-header .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 28px;
+      letter-spacing: 0.02em;
+    }
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+    }
+    .header-nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .header-nav a:hover { color: var(--blue); }
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue);
+      color: #fff !important;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 48px 0 72px;
+      background:
+        radial-gradient(1000px 420px at 80% 0%, rgba(74,144,217,0.16), transparent 60%),
+        linear-gradient(180deg, #F7FBFF 0%, #FFFFFF 70%);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% auto;
+      width: 55vw;
+      height: 55vw;
+      background: radial-gradient(circle, rgba(74,144,217,0.12), transparent 68%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+    }
+    .hero-brand {
+      font-size: clamp(48px, 8vw, 72px);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4.2vw, 40px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+    .hero-lead {
       font-size: 16px;
-      color: #666;
+      color: var(--muted);
+      max-width: 34em;
+      margin-bottom: 28px;
     }
-    .nav {
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid #eee;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 28px;
     }
-    .nav a {
-      color: #4A90D9;
-      text-decoration: none;
-      margin-right: 16px;
+    .trial-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warn);
+      color: #3B2F00;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-dark {
+      background: #111;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(74,144,217,0.28);
+    }
+    .btn-blue:hover { background: var(--blue-deep); }
+    .btn-outline {
+      background: #fff;
+      border: 1.5px solid var(--line);
+      color: var(--navy);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      box-shadow: 0 4px 12px rgba(27,42,65,0.04);
+    }
+    .badge i {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-style: normal;
+      font-size: 12px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+    }
+    .family-float {
+      position: absolute;
+      left: -8px;
+      bottom: 24px;
+      width: min(220px, 42%);
+      z-index: 2;
+      filter: drop-shadow(0 12px 24px rgba(27,42,65,0.12));
+      animation: floatY 5s ease-in-out infinite;
+    }
+    .phones {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 12px;
+      padding-left: 60px;
+    }
+    .phone {
+      width: 148px;
+      background: #111;
+      border-radius: 28px;
+      padding: 10px 8px 12px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 42px;
+      height: 6px;
+      border-radius: 999px;
+      background: #2a2a2a;
+      z-index: 2;
+    }
+    .phone img {
+      border-radius: 20px;
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      object-fit: cover;
+      background: #fff;
+    }
+    .phone.mid {
+      width: 168px;
+      transform: translateY(-18px);
+      z-index: 3;
+    }
+    .phone.left { transform: rotate(-6deg) translateY(10px); }
+    .phone.right { transform: rotate(6deg) translateY(10px); }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Worries */
+    .worries { background: var(--blue-mist); }
+    .worry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .worry-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+      align-items: center;
+    }
+    .worry-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--blue-deep);
+    }
+    .worry-card ul {
+      padding-left: 1.1em;
+      color: var(--muted);
       font-size: 14px;
     }
-    .nav a:hover { text-decoration: underline; }
-    h2 {
-      font-size: 22px;
-      margin-top: 32px;
-      margin-bottom: 16px;
-      color: #1a1a1a;
-      border-bottom: 2px solid #4A90D9;
-      padding-bottom: 4px;
+    .worry-card li { margin-bottom: 8px; }
+    .worry-card img {
+      width: 120px;
+      margin-inline: auto;
     }
-    h3 {
-      font-size: 17px;
-      margin-top: 20px;
-      margin-bottom: 8px;
-      color: #333;
+
+    /* How */
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      position: relative;
     }
-    p, li {
+    .how-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .how-step .num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin: 0 auto 14px;
+    }
+    .how-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 28px;
+    }
+    .how-step h3 { font-size: 18px; margin-bottom: 8px; }
+    .how-step p { font-size: 14px; color: var(--muted); }
+    .how-note {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Privacy */
+    .privacy-box {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      align-items: stretch;
+      background: var(--blue-soft);
+      border-radius: 28px;
+      padding: 32px;
+    }
+    .privacy-col {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .privacy-col h3 {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+    .privacy-col li {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .mark {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 12px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .mark.no { background: var(--danger); }
+    .mark.yes { background: var(--ok); }
+    .shield {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: #fff;
+      border: 6px solid var(--blue);
+      display: grid;
+      place-items: center;
+      align-self: center;
+      font-size: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Features */
+    .features { background: var(--blue-mist); }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px 16px;
+      text-align: center;
+      border: 1px solid rgba(74,144,217,0.12);
+      transition: transform .2s ease;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-card .ico {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 12px;
+      border-radius: 16px;
+      background: var(--blue-soft);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+    }
+    .feature-card h3 {
       font-size: 15px;
+      line-height: 1.45;
+    }
+
+    /* Flow */
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .flow-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .flow-card .phone {
+      width: 140px;
+      margin: 0 auto 16px;
+      transform: none;
+    }
+    .flow-card h3 {
+      font-size: 16px;
       margin-bottom: 8px;
     }
-    ul {
-      padding-left: 24px;
-      margin-bottom: 16px;
+    .flow-card p {
+      font-size: 13px;
+      color: var(--muted);
     }
-    .card {
-      background: #f0f4f8;
-      padding: 20px 24px;
-      border-radius: 12px;
-      margin-bottom: 16px;
+    .step-label {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
     }
-    .card h3 {
-      margin-top: 0;
-      color: #4A90D9;
+
+    /* Biz */
+    .biz { background: linear-gradient(180deg, #fff 0%, var(--blue-mist) 100%); }
+    .biz-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+      align-items: center;
     }
-    .links {
+    .biz-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .biz-point {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .biz-point span {
+      display: block;
+      color: var(--blue);
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .biz-visual img {
+      width: min(100%, 360px);
+      margin-inline: auto;
+      filter: drop-shadow(0 16px 30px rgba(27,42,65,0.12));
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .price-card {
+      background: #fff;
+      border: 1.5px solid var(--line);
+      border-radius: 22px;
+      padding: 24px 18px;
+      text-align: center;
+      position: relative;
+    }
+    .price-card.featured {
+      border-color: var(--blue);
+      box-shadow: 0 16px 36px rgba(74,144,217,0.18);
+      transform: translateY(-6px);
+    }
+    .price-card .name {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .price-card .price {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--blue-deep);
+      line-height: 1.1;
+    }
+    .price-card .price small {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .price-card .year {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 6px 0 14px;
+    }
+    .price-card .cap {
+      display: inline-block;
+      background: var(--blue-soft);
+      color: var(--blue-deep);
+      font-weight: 800;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+    .pricing-note {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Final CTA */
+    .final {
+      padding: 96px 0 72px;
+      background:
+        radial-gradient(700px 280px at 50% 0%, rgba(74,144,217,0.18), transparent 70%),
+        #fff;
+      text-align: center;
+    }
+    .final-visual {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .qr-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .qr-box img { width: 140px; height: 140px; }
+    .qr-box p {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      word-break: break-all;
+      max-width: 160px;
+    }
+    .final h2 {
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 900;
+      margin: 8px 0 24px;
+      color: var(--navy);
+    }
+    .final-family {
+      width: min(280px, 70vw);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer .inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    footer nav {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin-top: 24px;
     }
-    .links a {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #4A90D9;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
+    footer a:hover { color: var(--blue); }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .worry-grid,
+      .privacy-box,
+      .biz-grid,
+      .pricing-grid,
+      .feature-grid,
+      .flow-steps,
+      .how-steps {
+        grid-template-columns: 1fr;
+      }
+      .privacy-box { grid-template-columns: 1fr; }
+      .shield { margin: 0 auto; }
+      .phones {
+        justify-content: center;
+        padding-left: 0;
+        margin-top: 24px;
+      }
+      .family-float {
+        position: static;
+        width: 180px;
+        margin: 0 auto 8px;
+      }
+      .hero-visual { min-height: auto; }
+      .phone, .phone.mid { width: 120px; }
+      .phone.mid { transform: translateY(-10px); }
+      .price-card.featured { transform: none; }
+      .header-nav .hide-sm { display: none; }
+      .worry-card { grid-template-columns: 1fr; text-align: left; }
+      .biz-points { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
     }
-    .links a:hover {
-      background: #3a7bc8;
-    }
-    .links a.secondary {
-      background: #fff;
-      color: #4A90D9;
-      border: 1px solid #4A90D9;
-    }
-    .links a.secondary:hover {
-      background: #f0f4f8;
-    }
-    .contact {
-      background: #f0f4f8;
-      padding: 16px 20px;
-      border-radius: 8px;
-      margin-top: 24px;
-    }
-    .contact a {
-      color: #4A90D9;
-    }
-    .faq-item {
-      margin-bottom: 20px;
-    }
-    .faq-item strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #1a1a1a;
+
+    @media (max-width: 560px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .phones { gap: 6px; }
+      .phone, .phone.mid { width: 104px; padding: 8px 6px 10px; border-radius: 22px; }
+      .phone img { border-radius: 16px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="nav">
-      <a href="index.html">サポート</a>
-      <a href="privacy-policy.html">プライバシーポリシー</a>
-      <a href="terms-of-service.html">利用規約</a>
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="index.html">
+        <img src="images/anpi_logo.png" alt="">
+        Anpi
+      </a>
+      <nav class="header-nav">
+        <a class="hide-sm" href="#how">仕組み</a>
+        <a class="hide-sm" href="#features">機能</a>
+        <a class="hide-sm" href="#pricing">料金</a>
+        <a class="hide-sm" href="support.html">サポート</a>
+        <a class="header-cta" href="#download">ダウンロード</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="header">
-      <h1>Anpi</h1>
-      <p class="tagline">大切な人を見守るアプリ</p>
-    </div>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="hero-brand">Anpi</div>
+          <h1>位置情報を使わない、<br>やさしい見守り。</h1>
+          <p class="hero-lead">
+            離れて暮らす家族の安否を、歩数と睡眠のデータだけでそっと確認。
+            設定した時間（1〜24時間）動きがなければ、あなたにだけ通知が届きます。
+          </p>
+          <div class="hero-actions">
+            <span class="trial-pill">1ヶ月無料トライアル</span>
+            <a class="btn btn-dark" href="#download" aria-label="App Store">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a class="btn btn-blue" href="#download">ダウンロード</a>
+          </div>
+          <div class="badge-row">
+            <span class="badge"><i>×</i>GPSは使いません</span>
+            <span class="badge"><i>♥</i>ヘルスケア連携</span>
+            <span class="badge"><i>○</i>居場所はわかりません</span>
+            <span class="badge"><i>☾</i>夜間も安心設計</span>
+          </div>
+        </div>
 
-    <h2>Anpi について</h2>
-    <p>Anpi（あんぴ）は、離れて暮らす家族や大切な人の安否を簡単に確認できるアプリです。設定した時間が経過しても反応がない場合に通知でお知らせし、「大丈夫？」メッセージを送ることで、お互いの安心を支えます。</p>
+        <div class="hero-visual">
+          <img class="family-float" src="images/family-icon.png" alt="家族のイラスト">
+          <div class="phones" aria-label="アプリ画面">
+            <div class="phone left">
+              <img src="images/screen-invite.png" alt="見守り時間の設定画面">
+            </div>
+            <div class="phone mid">
+              <img src="images/screen-home.png" alt="見守りゲージ画面">
+            </div>
+            <div class="phone right">
+              <img src="images/screen-alert.png" alt="時間超過アラート画面">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h3>主な機能</h3>
-      <ul>
-        <li>見守り対象者の安否状態をリアルタイムで確認</li>
-        <li>「大丈夫？」メッセージの送受信</li>
-        <li>見守り時間の設定と自動通知</li>
-        <li>招待コードによる簡単なペアリング</li>
-      </ul>
-    </div>
+    <section class="section worries" id="worries">
+      <div class="wrap">
+        <h2 class="section-title">こんな不安ありませんか</h2>
+        <div class="worry-grid">
+          <article class="worry-card">
+            <div>
+              <h3>家族</h3>
+              <ul>
+                <li>遠くに住む親のことが気になる</li>
+                <li>毎日電話するのはお互いに負担</li>
+                <li>位置情報までは見られたくない／見たくない</li>
+                <li>「元気かな」をそっと確認したい</li>
+              </ul>
+            </div>
+            <img src="images/family_watching.png" alt="">
+          </article>
+          <article class="worry-card">
+            <div>
+              <h3>事業者・法人</h3>
+              <ul>
+                <li>孤独死リスクを下げたい</li>
+                <li>入居者のプライバシーは守りたい</li>
+                <li>巡回の負担を減らしたい</li>
+                <li>GPS監視ではなく見守りで安心を届けたい</li>
+              </ul>
+            </div>
+            <img src="images/elderly_couple.png" alt="">
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <h2>料金プラン</h2>
-    <p>見守りたい人を招待するには、いずれかのプランへの登録が必要です。各プランには1ヶ月間の無料トライアル（導入オファー）がある場合があります。</p>
-    <div class="card">
-      <h3>シングルプラン</h3>
-      <p>最大1人まで見守り可能（月額¥300 / 年額¥3,000）</p>
-    </div>
-    <div class="card">
-      <h3>ライトプラン</h3>
-      <p>最大2人まで見守り可能（月額¥590 / 年額¥5,900）</p>
-    </div>
-    <div class="card">
-      <h3>ファミリープラン</h3>
-      <p>最大10人まで見守り可能（月額¥1,480 / 年額¥14,800）</p>
-    </div>
-    <div class="card">
-      <h3>ビジネスプラン</h3>
-      <p>最大50人まで見守り可能（月額¥5,980 / 年額¥59,800）</p>
-    </div>
+    <section class="section" id="how">
+      <div class="wrap">
+        <h2 class="section-title">Anpiの仕組み</h2>
+        <div class="how-steps">
+          <article class="how-step">
+            <div class="num">1</div>
+            <div class="how-icons"><span>👣</span><span>🛏</span></div>
+            <h3>歩数・睡眠を確認</h3>
+            <p>Appleヘルスケアの歩数と睡眠から、活動の有無を確認します。</p>
+          </article>
+          <article class="how-step">
+            <div class="num">2</div>
+            <div class="how-icons"><span>💓</span></div>
+            <h3>活動があるか判定</h3>
+            <p>詳細な健康データは共有せず、最終活動の目安だけを使います。</p>
+          </article>
+          <article class="how-step">
+            <div class="num">3</div>
+            <div class="how-icons"><span>🔔</span></div>
+            <h3>一定時間なければ通知</h3>
+            <p>設定時間を超えたときだけ、見守る人へプッシュ通知します。</p>
+          </article>
+        </div>
+        <p class="how-note">位置情報（GPS）は使いません。活動の判定にはヘルスケアの許可が必要です。</p>
+      </div>
+    </section>
 
-    <h2>よくある質問</h2>
+    <section class="section" id="privacy">
+      <div class="wrap">
+        <h2 class="section-title">プライバシーへのこだわり</h2>
+        <div class="privacy-box">
+          <div class="privacy-col">
+            <h3>取得・共有しないもの</h3>
+            <ul>
+              <li><span class="mark no">×</span>位置情報（GPS）</li>
+              <li><span class="mark no">×</span>リアルタイム追跡</li>
+              <li><span class="mark no">×</span>いまどこにいるかの詳細</li>
+              <li><span class="mark no">×</span>歩数・睡眠の詳細ログ共有</li>
+            </ul>
+          </div>
+          <div class="shield" aria-hidden="true">🛡</div>
+          <div class="privacy-col">
+            <h3>見守りに使うもの</h3>
+            <ul>
+              <li><span class="mark yes">✓</span>歩数による活動の有無</li>
+              <li><span class="mark yes">✓</span>睡眠による活動の有無</li>
+              <li><span class="mark yes">✓</span>最終活動の目安時刻</li>
+              <li><span class="mark yes">✓</span>双方の同意にもとづくペアリング</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="faq-item">
-      <strong>Q. プランに入らないと使えないのですか？</strong>
-      <p>見守られる側として招待を受ける場合はプラン不要です。「見守りたい人を招待」する場合は、いずれかの有料プランへの登録が必要です。</p>
-    </div>
+    <section class="section features" id="features">
+      <div class="wrap">
+        <h2 class="section-title">主な機能</h2>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="ico">👣</div><h3>歩数・睡眠で<br>活動確認</h3></article>
+          <article class="feature-card"><div class="ico">⚠️</div><h3>無活動アラート<br>安否通知</h3></article>
+          <article class="feature-card"><div class="ico">💬</div><h3>「大丈夫？」<br>メッセージ</h3></article>
+          <article class="feature-card"><div class="ico">🔗</div><h3>招待コードで<br>かんたんペアリング</h3></article>
+          <article class="feature-card"><div class="ico">⏱</div><h3>見守り時間<br>1〜24時間</h3></article>
+          <article class="feature-card"><div class="ico">📲</div><h3>プッシュ通知</h3></article>
+          <article class="feature-card"><div class="ico">👨‍👩‍👧</div><h3>複数人の<br>見守り</h3></article>
+          <article class="feature-card"><div class="ico">🎁</div><h3>1ヶ月<br>無料トライアル</h3></article>
+        </div>
+      </div>
+    </section>
 
-    <div class="faq-item">
-      <strong>Q. サブスクリプションの解約方法は？</strong>
-      <p>iPhoneの「設定」→「自分の名前」→「サブスクリプション」から、Anpiのサブスクリプションを選択して解約できます。</p>
-    </div>
+    <section class="section" id="flow">
+      <div class="wrap">
+        <h2 class="section-title">家族の使い方</h2>
+        <div class="flow-steps">
+          <article class="flow-card">
+            <span class="step-label">STEP 1</span>
+            <div class="phone"><img src="images/screen-invite.png" alt="招待コード生成"></div>
+            <h3>プラン登録して招待コードを発行</h3>
+            <p>見守る人が時間を設定し、招待コードを共有します。</p>
+          </article>
+          <article class="flow-card">
+            <span class="step-label">STEP 2</span>
+            <div class="phone"><img src="images/screen-home.png" alt="ペアリング後の画面"></div>
+            <h3>相手がコードを入力してペアリング</h3>
+            <p>見守られる人は歩数・睡眠の許可をオンにします。</p>
+          </article>
+          <article class="flow-card">
+            <span class="step-label">STEP 3</span>
+            <div class="phone"><img src="images/screen-alert.png" alt="安否確認アラート"></div>
+            <h3>動きがないときだけ通知</h3>
+            <p>必要なら「大丈夫？」をワンタップで送信できます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <div class="faq-item">
-      <strong>Q. 機種変更した場合はどうなりますか？</strong>
-      <p>同じApple IDでサインインし、アプリ内の「購入を復元」をタップすれば、サブスクリプションが復元されます。</p>
-    </div>
+    <section class="section biz" id="business">
+      <div class="wrap">
+        <h2 class="section-title">事業者・管理会社向けメリット</h2>
+        <div class="biz-grid">
+          <div class="biz-points">
+            <div class="biz-point"><span>①</span>孤独死の早期発見につながる見守り</div>
+            <div class="biz-point"><span>②</span>入居者の心理的負担を抑えやすい</div>
+            <div class="biz-point"><span>③</span>位置追跡ではなくプライバシー配慮</div>
+            <div class="biz-point"><span>④</span>巡回・安否確認の負荷軽減</div>
+            <div class="biz-point"><span>⑤</span>最大50人まで見守れるビジネスプラン</div>
+            <div class="biz-point"><span>⑥</span>リスク管理の補完ツールとして導入しやすい</div>
+          </div>
+          <div class="biz-visual">
+            <img src="images/family_with_phone.png" alt="スマホで安否を確認するイメージ">
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="faq-item">
-      <strong>Q. 見守り相手に通知が届きません。</strong>
-      <p>相手のiPhoneで通知の許可が有効になっているか確認してください。「設定」→「通知」→「Anpi」で「通知を許可」をオンにしてください。</p>
-    </div>
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <h2 class="section-title">料金プラン（税込）</h2>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="name">シングル</div>
+            <div class="price">¥300<small>/月</small></div>
+            <div class="year">年額 ¥3,000</div>
+            <div class="cap">最大1人</div>
+          </article>
+          <article class="price-card">
+            <div class="name">ライト</div>
+            <div class="price">¥590<small>/月</small></div>
+            <div class="year">年額 ¥5,900</div>
+            <div class="cap">最大2人</div>
+          </article>
+          <article class="price-card featured">
+            <div class="name">ファミリー</div>
+            <div class="price">¥1,480<small>/月</small></div>
+            <div class="year">年額 ¥14,800</div>
+            <div class="cap">最大10人</div>
+          </article>
+          <article class="price-card">
+            <div class="name">ビジネス</div>
+            <div class="price">¥5,980<small>/月</small></div>
+            <div class="year">年額 ¥59,800</div>
+            <div class="cap">最大50人</div>
+          </article>
+        </div>
+        <p class="pricing-note">
+          「見守りたい人を招待」するにはプラン登録が必要です。見守られる側のプラン登録は不要です。<br>
+          App Store の導入オファーとして、1ヶ月無料トライアルが適用される場合があります。
+        </p>
+      </div>
+    </section>
 
-    <div class="faq-item">
-      <strong>Q. アカウントを削除したい。</strong>
-      <p>アプリ内の「設定」→「アカウント削除」から削除できます。削除すると、すべてのデータが消去され、復元できません。</p>
-    </div>
+    <section class="final" id="download">
+      <div class="wrap">
+        <div class="final-visual">
+          <div class="qr-box">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data=https%3A%2F%2Fposmap-japan.github.io%2Fanpi-app%2F" alt="QRコード">
+            <p>posmap-japan.github.io/anpi-app/</p>
+          </div>
+          <img class="final-family" src="images/family-icon.png" alt="家族のイラスト">
+        </div>
+        <h2>大切な人の無事を、<br>見張らずに見守る。</h2>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-dark" href="https://apps.apple.com/jp/search?term=Anpi">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            App Store
+          </a>
+          <a class="btn btn-blue" href="https://apps.apple.com/jp/search?term=Anpi">今すぐチェック</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <h2>お問い合わせ</h2>
-    <div class="contact">
-      <p>ご不明な点やお問い合わせは、以下のメールアドレスまでお気軽にご連絡ください。</p>
-      <p><strong>メール:</strong> <a href="mailto:anpi.app.support@gmail.com">anpi.app.support@gmail.com</a></p>
+  <footer>
+    <div class="wrap inner">
+      <p>© Anpi（あんぴ）</p>
+      <nav>
+        <a href="terms-of-service.html">利用規約</a>
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+        <a href="support.html">サポート</a>
+        <a href="mailto:anpi.app.support@gmail.com">お問い合わせ</a>
+      </nav>
     </div>
-
-    <div class="links">
-      <a href="privacy-policy.html">プライバシーポリシー</a>
-      <a href="terms-of-service.html" class="secondary">利用規約</a>
-    </div>
-  </div>
+  </footer>
 </body>
 </html>
