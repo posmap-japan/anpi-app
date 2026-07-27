@@ -1,0 +1,48 @@
+Important
+Anpi is not an emergency service or a medical device. In a real emergency, call local emergency services right away.
+
+Anpi helps you watch over people you care about—using steps and sleep data from Apple Health, not GPS.
+
+How monitoring works
+• Anpi does not use location tracking
+• The person being watched allows Apple Health access to Steps and Sleep
+• Anpi updates a “last activity time” from the newer of:
+  – the latest Steps sample, or
+  – the end time of the latest Sleep Analysis sample
+• If there is no new activity for the time you set (1–24 hours), the watcher gets a notification
+• Sleep records help reduce false alerts overnight, when someone is resting and not walking
+• Anpi does not medically distinguish normal sleep from illness or collapse—it only checks whether activity records have stopped for the set time
+• Unlocking the phone alone does not reset the timer; updates happen when Health data is available and synced
+
+Invite in two ways
+• “I want to watch over you” — invite someone you want to monitor
+• “I want you to watch over me” — invite someone to look after you
+
+Other features
+• Send a simple “Are you OK?” check-in
+• Easy pairing with an invitation code
+• Monitor multiple people on Family / Business plans
+
+Privacy-minded by design
+• No GPS / no live location sharing
+• Steps and sleep details are not shared with the watcher—only activity timing needed for monitoring
+• Monitoring starts only after both sides agree
+
+Plans (auto-renewable subscription)
+• Single — watch 1 person (¥300/month or ¥3,000/year)
+• Light — up to 2 people (¥590/month or ¥5,900/year)
+• Family — up to 10 people (¥1,480/month or ¥14,800/year)
+• Business — up to 50 people (¥5,980/month or ¥59,800/year)
+
+A free trial may be available as an introductory offer. After the trial, you will be charged unless you cancel. Manage or cancel anytime in iPhone Settings → [Your Name] → Subscriptions.
+
+Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period.
+
+Terms of Use (EULA):
+https://posmap-japan.github.io/anpi-app/terms-of-service.html
+
+Privacy Policy:
+https://posmap-japan.github.io/anpi-app/privacy-policy.html
+
+Support / FAQ:
+https://posmap-japan.github.io/anpi-app/support.html
