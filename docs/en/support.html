@@ -158,7 +158,7 @@
         <li><strong>Replying to "Are you OK?":</strong> replying "I'm OK" or "I'm not OK" in Anpi. Either reply resets the timer, and the reply is sent to the watcher. If the reply is "I'm not OK", please get in touch right away.</li>
       </ul>
       <ul>
-        <li><strong>Alerts:</strong> if no activity is confirmed for the set time (1 to 24 hours), both the watcher and the person being watched are notified.</li>
+        <li><strong>Alerts:</strong> if no activity is confirmed for the set time (1 to 24 hours), both the watcher and the person being watched are notified. If there is still no activity, the watcher is reminded every hour, up to 3 more times (the person being watched is asked only once).</li>
         <li><strong>When no data arrives:</strong> if the phone is off or offline, Anpi sends a separate "no data arriving" notification.</li>
         <li><strong>Not detected:</strong> use of other apps (messaging apps, browsers, etc.) or simply unlocking the phone does not count. Sleep data is not used.</li>
         <li><strong>Not a medical judgment:</strong> Anpi cannot tell rest apart from illness.</li>
@@ -178,6 +178,10 @@
       <p>An increase in steps, opening Anpi, or replying to "Are you OK?" (either "I'm OK" or "I'm not OK"). Steps are sent automatically even if Anpi isn't open, and the timer uses the time you actually walked.</p>
     </div>
     <div class="faq-item">
+      <strong>Q. How many alerts will I get?</strong>
+      <p>When the set time passes without activity, Anpi sends one alert. If there is still no activity, it sends a reminder every hour, up to 3 times, and then stops. For example, with a 24-hour setting, alerts arrive at 24, 25, 26 and 27 hours. They stop as soon as activity (steps, opening Anpi, etc.) is confirmed, and the next time the set time passes, they start again from the first alert.</p>
+    </div>
+    <div class="faq-item">
       <strong>Q. Does using messaging apps or a browser reset the timer?</strong>
       <p>No. Anpi does not detect the use of other apps or unlocking. The timer resets when steps increase, when Anpi is opened, or when "Are you OK?" is answered.</p>
     </div>
@@ -192,7 +196,7 @@
         <li>In Settings → General → Background App Refresh, make sure Anpi is on</li>
         <li>Make sure Low Power Mode is off (sending may be delayed while it's on)</li>
       </ul>
-      <p>iPhone decides when steps are sent, so it may take some time. Opening Anpi sends them immediately. You can check whether Steps is on in Anpi's Settings → Steps.</p>
+      <p>While Anpi is closed, iPhone passes steps to Anpi at most about once an hour (this is how iPhone works, and Anpi cannot make it faster). It can be even slower while the phone is locked or in Low Power Mode, so it may take more than an hour to be reflected. Please allow extra time when setting the notification time. Opening Anpi or tapping "I'm OK" resets the timer immediately. You can check whether Steps is on in Anpi's Settings → Steps.</p>
     </div>
     <div class="faq-item">
       <strong>Q. Can I add a widget to my Home Screen?</strong>
