@@ -1,48 +1,51 @@
 Important
-Anpi is not an emergency service or a medical device. In a real emergency, call local emergency services right away.
+Anpi is not an emergency service or a medical device. In an emergency, contact local emergency services right away.
 
-Anpi helps you watch over people you care about—using steps and sleep data from Apple Health, not GPS.
+Anpi helps you gently watch over family and loved ones who live apart, without using GPS. If no activity is confirmed for the time you set, Anpi lets you know.
 
-How monitoring works
-• Anpi does not use location tracking
-• The person being watched allows Apple Health access to Steps and Sleep
-• Anpi updates a “last activity time” from the newer of:
-  – the latest Steps sample, or
-  – the end time of the latest Sleep Analysis sample
-• If there is no new activity for the time you set (1–24 hours), the watcher gets a notification
-• Sleep records help reduce false alerts overnight, when someone is resting and not walking
-• Anpi does not medically distinguish normal sleep from illness or collapse—it only checks whether activity records have stopped for the set time
-• Unlocking the phone alone does not reset the timer; updates happen when Health data is available and synced
+How watching works
+• No location tracking
+• Any of these counts as activity and resets the watch timer:
+  – Apple Health steps increase (sent automatically, even when Anpi isn't open)
+  – Opening Anpi
+  – Replying to "Are you OK?" (either "I'm OK" or "I'm not OK")
+• If no activity is confirmed for the set time (1–24 hours), both the watcher and the person being watched are notified
+• If no data is arriving from the phone, Anpi sends a separate "no data arriving" notice instead of a "no activity" alert
+• Unlocking the phone or using other apps does not reset the timer
+• Anpi does not medically tell rest apart from illness
 
-Invite in two ways
-• “I want to watch over you” — invite someone you want to monitor
-• “I want you to watch over me” — invite someone to look after you
+Features
+• Send "Are you OK?" and get a one-tap reply
+• Get notified right away when the reply is "I'm not OK"
+• Home Screen widget: photo, name and time since last activity with a gauge (medium and large sizes show several people)
+• Two kinds of invites — "I want to watch over you" and "Please watch over me" — with easy invite-code pairing
+• Check notification and Steps status right from Settings
 
-Other features
-• Send a simple “Are you OK?” check-in
-• Easy pairing with an invitation code
-• Monitor multiple people on Family / Business plans
+Privacy
+• We never collect location, contacts, messages, browsing history, use of other apps, or sleep data
+• Step details are never sent or shared — only the time your steps increased is used
+• Watching starts only when both people agree
+• All communication is encrypted, and we never use your information for ads or sell it
 
-Privacy-minded by design
-• No GPS / no live location sharing
-• Steps and sleep details are not shared with the watcher—only activity timing needed for monitoring
-• Monitoring starts only after both sides agree
+Plans (the number is how many people you can watch over)
+• Free — 1 person (free)
+• Plus — up to 2 people
+• Family — up to 5 people
+• Business — up to 50 people
+Prices are shown in the App Store in your local currency. No plan is needed to be watched.
 
-Plans (auto-renewable subscription)
-• Single — watch 1 person (¥300/month or ¥3,000/year)
-• Light — up to 2 people (¥590/month or ¥5,900/year)
-• Family — up to 10 people (¥1,480/month or ¥14,800/year)
-• Business — up to 50 people (¥5,980/month or ¥59,800/year)
-
-A free trial may be available as an introductory offer. After the trial, you will be charged unless you cancel. Manage or cancel anytime in iPhone Settings → [Your Name] → Subscriptions.
+Paid plans may include a one-month free trial as an introductory offer. After the trial, you will be charged unless you cancel. Manage or cancel anytime in iPhone Settings → [Your Name] → Subscriptions.
 
 Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period.
 
+Languages
+English, Japanese, Simplified Chinese, Korean, Spanish, Portuguese, French, German, Indonesian, Vietnamese, Italian
+
 Terms of Use (EULA):
-https://posmap-japan.github.io/anpi-app/terms-of-service.html
+https://posmap-japan.github.io/anpi-app/en/terms-of-service.html
 
 Privacy Policy:
-https://posmap-japan.github.io/anpi-app/privacy-policy.html
+https://posmap-japan.github.io/anpi-app/en/privacy-policy.html
 
 Support / FAQ:
-https://posmap-japan.github.io/anpi-app/support.html
+https://posmap-japan.github.io/anpi-app/en/support.html

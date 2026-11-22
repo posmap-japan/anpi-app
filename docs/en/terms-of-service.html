@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - Anpi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: #f9f9f9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      background: #fff;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+    .app-name {
+      color: #4A90D9;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .last-updated {
+      color: #888;
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+      border-bottom: 2px solid #4A90D9;
+      padding-bottom: 4px;
+    }
+    p, li {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .highlight-box {
+      background: #e8f4fd;
+      border-left: 4px solid #4A90D9;
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+    .highlight-box p {
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    .contact {
+      background: #f0f4f8;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-top: 24px;
+    }
+    .contact a {
+      color: #4A90D9;
+    }
+    .nav {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eee;
+    }
+    .nav a {
+      color: #4A90D9;
+      text-decoration: none;
+      margin-right: 16px;
+      font-size: 14px;
+    }
+    .nav a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="../index.html">Home (Japanese)</a>
+      <a href="support.html">Support</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="../terms-of-service.html" lang="ja">日本語</a>
+    </div>
+
+    <p class="app-name">Anpi</p>
+    <h1>Terms of Service</h1>
+    <p class="last-updated">Last updated: November 22, 2026</p>
+
+    <p>These Terms of Service ("Terms") set out the conditions for using Anpi ("the App"). Please read them before using the App. By using the App, you agree to these Terms. The Japanese version of these Terms is the governing version; this English version is provided for convenience.</p>
+
+    <h2>1. The Service</h2>
+    <p>The App helps you watch over the people you care about, based on Apple Health step data, use of the App and replies to safety checks. It is used with the mutual consent of the watcher and the person being watched. Main features:</p>
+    <ul>
+      <li>Activity confirmation from step increases, use of the App, and replies to "Are you OK?" messages</li>
+      <li>Notifications to the watcher and to the person themselves when no activity is confirmed for a set time</li>
+      <li>Separate notifications when no data is arriving, distinguished from "no activity"</li>
+      <li>Watch time settings (1 to 24 hours)</li>
+      <li>Sending and receiving "Are you OK?" messages</li>
+      <li>Safety alerts by push notification</li>
+      <li>A Home Screen widget showing the time since each person's last activity</li>
+    </ul>
+
+    <h2>2. Information Collected</h2>
+    <p>The App collects <strong>only the minimum information</strong> needed to provide the service: display name and profile photo; step data from Apple Health with your permission (used only to confirm when steps increased; step details are not sent to the server); activity times (when steps increased, when you opened the App, when and how you replied to an "Are you OK?" message, and when data was received); operating status; pairing settings; and a push notification token. See the <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+    <div class="highlight-box">
+      <p>We never collect location, contacts, call history, message content, browsing history, use of other apps, or sleep data. Step details are never shared with the people you are paired with.</p>
+    </div>
+
+    <h2>3. Use of Information</h2>
+    <p>Information is used only to provide the watch feature, authenticate users, manage accounts, and maintain and improve the service.</p>
+    <div class="highlight-box">
+      <p>We never use information for advertising or sell it to third parties.</p>
+    </div>
+
+    <h2>4. Storage and Security</h2>
+    <ol>
+      <li>Data is stored on Firebase (Google Cloud).</li>
+      <li>Data is transmitted over encrypted connections (SSL/TLS).</li>
+      <li>Activity records kept to prevent duplicates are deleted automatically after 30 days.</li>
+      <li>When you delete your account, all related data is deleted promptly.</li>
+      <li>The App never collects or stores payment details. Payments are processed through the App Store and RevenueCat.</li>
+    </ol>
+
+    <h2>5. How Activity Is Confirmed</h2>
+    <p>For the person being watched, the App treats any of the following as activity:</p>
+    <ul>
+      <li>An increase in Apple Health steps (only if the user has explicitly allowed access to Health)</li>
+      <li>Opening and using the App</li>
+      <li>Replying to an "Are you OK?" message in the App. Both "I'm OK" and "I'm not OK" count as activity, because they confirm the person used their phone. The reply is sent to the watcher.</li>
+    </ul>
+    <ul>
+      <li>Location (GPS) is not used. Use of other apps and sleep data are not used to confirm activity.</li>
+      <li>When steps are sent depends on the device's state (power, connection, Low Power Mode, Background App Refresh, etc.) and may be delayed.</li>
+      <li>If no data arrives because the device is off or offline, a "no data arriving" notification is sent. Notifications may be sent even if the person is actually active.</li>
+      <li>The App does not medically distinguish between normal rest and illness.</li>
+    </ul>
+
+    <h2>6. Accounts</h2>
+    <ol>
+      <li>Signing in with an Apple ID or Google account is required.</li>
+      <li>You are responsible for managing your account appropriately.</li>
+      <li>We may suspend accounts that are found to be misused.</li>
+    </ol>
+
+    <h2>7. Plans and Subscriptions</h2>
+    <ol>
+      <li>The App offers a free Free plan with basic watching, and paid subscription plans.</li>
+      <li>Paid plans may include a one-month free trial as an introductory offer on the App Store. If you do not cancel before the trial ends, the regular price is charged.</li>
+      <li>Plans are as follows. The number is the maximum number of people you can watch over, not the number of family members who receive notifications.
+        <ul>
+          <li><strong>Free:</strong> up to 1 person (free)</li>
+          <li><strong>Plus:</strong> up to 2 people</li>
+          <li><strong>Family:</strong> up to 5 people</li>
+          <li><strong>Business:</strong> up to 50 people</li>
+        </ul>
+        Monthly and yearly prices are shown in the App Store in your local currency and may vary by country or region.
+      </li>
+      <li>Plan limits apply when adding new people. Existing pairings above a limit are not removed automatically.</li>
+      <li>Subscriptions renew automatically unless canceled at least 24 hours before the renewal date.</li>
+      <li>You can manage or cancel subscriptions in the App Store (iPhone Settings → your name → Subscriptions).</li>
+      <li>Refunds follow Apple's refund policy.</li>
+    </ol>
+
+    <h2>8. Prohibited Conduct</h2>
+    <ul>
+      <li>Acts that violate laws or public order</li>
+      <li>Misusing the watch feature without another user's consent</li>
+      <li>Interfering with the operation of the App</li>
+      <li>Unauthorized access or attempts at it</li>
+      <li>Harassing or stalking other users</li>
+      <li>Disassembling, decompiling or otherwise reverse engineering the App</li>
+      <li>Any other conduct we reasonably consider inappropriate</li>
+    </ul>
+
+    <h2>9. Disclaimer</h2>
+    <ol>
+      <li>The App is provided "as is". We do not fully guarantee the accuracy or timeliness of safety checks.</li>
+      <li>The App is not a substitute for emergency services. In an emergency, always contact the appropriate emergency services.</li>
+      <li>Activity updates and notifications may be delayed or fail because of network or server problems, device issues, Health data not updating, or device settings (notifications, Background App Refresh, Low Power Mode, etc.).</li>
+      <li>To the extent permitted by law, we are not liable for damages arising from use of the App.</li>
+    </ol>
+
+    <h2>10. Changes to or Termination of the Service</h2>
+    <ol>
+      <li>We may change, add or remove features of the App without prior notice.</li>
+      <li>We may suspend the App temporarily or permanently when unavoidable.</li>
+    </ol>
+
+    <h2>11. Intellectual Property</h2>
+    <p>All intellectual property rights in the App belong to us. You may not copy, reproduce or modify the App's content without our prior written consent.</p>
+
+    <h2>12. Changes to These Terms</h2>
+    <p>We may change these Terms as needed. Changes take effect when posted on this page. We will let you know in the App about important changes.</p>
+
+    <h2>13. Governing Law and Jurisdiction</h2>
+    <ol>
+      <li>These Terms are governed by the laws of Japan.</li>
+      <li>The court having jurisdiction over our location shall have exclusive jurisdiction over disputes relating to the App, unless mandatory consumer protection laws in your country provide otherwise.</li>
+    </ol>
+
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>For questions about these Terms, please contact us at:</p>
+      <p><strong>Email:</strong> <a href="mailto:anpi.app.support@gmail.com">anpi.app.support@gmail.com</a></p>
+    </div>
+  </div>
+</body>
+</html>
