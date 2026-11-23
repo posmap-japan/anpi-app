@@ -1,16 +1,25 @@
+Anpi is a safety check-in app that watches over parents and loved ones who live apart, without GPS tracking or cameras.
+It only alerts family when someone's steps haven't increased for the time you set. No daily action is needed.
+
 Important
 Anpi is not an emergency service or a medical device. In an emergency, contact local emergency services right away.
 
-Anpi helps you gently watch over family and loved ones who live apart, without using GPS. If no activity is confirmed for the time you set, Anpi lets you know.
+We don't collect extra data
+• Watching never uses location (GPS), the camera or the microphone (the camera is only for taking a profile photo)
+• No contacts, messages, browsing history, use of other apps, or sleep data
+• Only the time steps increased is used. Step details are never sent or shared
+• Watching starts only when both people agree
+• All communication is encrypted, and we never use your information for ads or sell it
 
 How watching works
-• No location tracking
 • Any of these counts as activity and resets the watch timer:
-  – Apple Health steps increase (sent automatically, even when Anpi isn't open)
+  – Steps increase (from Apple Health and iPhone's motion sensor; sent automatically, even when Anpi is closed or your iPhone is locked)
   – Opening Anpi
   – Replying to "Are you OK?" (either "I'm OK" or "I'm not OK")
-• If no activity is confirmed for the set time (1–24 hours), both the watcher and the person being watched are notified
+• If no activity is confirmed for the set time (12–36 hours; 24 by default), both the watcher and the person being watched are notified
+• If there's still no response, Anpi repeats the alert every hour, up to 3 more times (with a 24-hour setting: at 24, 25, 26 and 27 hours)
 • If no data is arriving from the phone, Anpi sends a separate "no data arriving" notice instead of a "no activity" alert
+• Because of how iPhone works, updates can be delayed by tens of minutes to an hour while the app is closed, so walking doesn't reset the timer instantly
 • Unlocking the phone or using other apps does not reset the timer
 • Anpi does not medically tell rest apart from illness
 
@@ -19,22 +28,22 @@ Features
 • Get notified right away when the reply is "I'm not OK"
 • Home Screen widget: photo, name and time since last activity with a gauge (medium and large sizes show several people)
 • Two kinds of invites — "I want to watch over you" and "Please watch over me" — with easy invite-code pairing
-• Check notification and Steps status right from Settings
+• "This iPhone's settings" in Settings shows Notifications, Steps, Motion & Fitness and Background App Refresh at a glance. Watching starts once everything is on
 
-Privacy
-• We never collect location, contacts, messages, browsing history, use of other apps, or sleep data
-• Step details are never sent or shared — only the time your steps increased is used
-• Watching starts only when both people agree
-• All communication is encrypted, and we never use your information for ads or sell it
+Great for
+• People worried about parents or grandparents living alone
+• Families who live far apart and find daily check-in calls a burden
+• Anyone who wants to watch over someone without tracking location or using cameras
+• Landlords and property managers checking on tenants
 
 Plans (the number is how many people you can watch over)
 • Free — 1 person (free)
-• Plus — up to 2 people
-• Family — up to 5 people
-• Business — up to 50 people
+• Plus — up to 2 people. Great for most households
+• Family — up to 5 people. Great for parents and relatives
+• Business — up to 50 people. Great for landlords and property managers
 Prices are shown in the App Store in your local currency. No plan is needed to be watched.
 
-Paid plans may include a one-month free trial as an introductory offer. After the trial, you will be charged unless you cancel. Manage or cancel anytime in iPhone Settings → [Your Name] → Subscriptions.
+New subscribers can try paid plans free for one month. After the trial, you will be charged unless you cancel. Manage or cancel anytime in iPhone Settings → [Your Name] → Subscriptions.
 
 Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period.
 
